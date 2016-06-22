@@ -4,6 +4,12 @@
 
 At a high level, this week is about building an effective process for learning unfamiliar language features and patterns.  In this workshop, you'll practice using this process to understand how the `this` keyword works in JavaScript.
 
+### Learning objectives
+
+1. Describe the `this` keyword as similar to `self` in Ruby.
+2. Explain some of the similarities and differences between the behaviour of the `this` keyword and the behaviour of `self` in Ruby.
+3. Explain the rules that govern the value of the `this` keyword.
+
 ### Getting visibility
 
 A great way to understand code is to first tighten the loop, then get visibility.  In this workshop, we'll practice getting visibility.  As you go through the workshop, try using `console.log()` to inspect the values of:
