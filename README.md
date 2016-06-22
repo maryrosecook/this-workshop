@@ -64,10 +64,12 @@ var person = new Person();
 
 ```js
 function Person() {
-  // What is the value of `this` at this point in the program?
+  // What is the value of `this` at this point in the program? Why?
 };
 
-var person = Person(); // note: no `new`
+// In this version, the programmer has forgotten to put `new` before
+// `Person()`
+var person = Person();
 ```
 
 ### Pause
@@ -79,53 +81,63 @@ After you complete each question, ask yourself, "What could I change about the c
 ### Question 3
 
 ```js
-function setCountProperty() {
+function Person() {
   this.count = 5;
 
   // On what object is the `count` property now stored?
 };
 
-setCountProperty();
+// Oh no! Accidentally left out `new` AGAIN!
+Person();
 
-// Bonus question: on what object is the `setCountProperty` function
+// Bonus question: on what object is the `Person` function
 // stored?
 ```
 
 ### Question 4
 
 ```js
-var person = {
-  name: "Mary",
-  someFunction: function() {
-    // What is the value of `this` the first time `someFunction` is run?
+function Person() {
+  this.name = "Mary";
+};
+
+Person.prototype = {
+  exclaimName: function() {
+    // What is the value of `this` the first time `exclaimName` is run?
     // What about the second time?
     // Research project: Why?
+
+    return this.name + "!";
   }
 };
 
-person.someFunction();
+var person = new Person();
+console.log(person.exclaimName());
 
-var someFunction = person.someFunction;
-someFunction();
+var exclaimName = person.exclaimName;
+console.log(exclaimName());
 ```
 
 ### Question 5
 
 ```js
-function someFunction() {
-  // What is the value of `this` the first time `someFunction` is run?
+function Person() {
+  this.name = "Mary";
+};
+
+function exclaimName() {
+  // What is the value of `this` the first time `exclaimName` is run?
   // What about the second time?
   // Research project: Why?
+
+  return this.name + "!";
 };
 
-someFunction();
+console.log(exclaimName());
 
-var person = {
-  name: "Mary",
-  someFunction: someFunction
-};
-
-person.someFunction();
+var person = new Person();
+person.exclaimName = exclaimName;
+console.log(person.exclaimName());
 ```
 
 ### Question 6
@@ -138,35 +150,25 @@ this;
 ### Question 7
 
 ```js
-function one() {
-  function two() {
-    // What value does `this` have here?
-    this;
-  };
-
-  two();
-};
-
-one();
-```
-
-### Question 8
-
-```js
-function someFunction() {
-  // What is the value of `this` the first time `someFunction` is run?
+function exclaimName() {
+  // What is the value of `this` the first time `exclaimName` is run?
   // What about the second time?
   // What about the third time?
   // Research project: what's the difference between call and apply?
+
+  return this.name + "!";
 };
 
-someFunction();
+console.log(exclaimName());
 
-someFunction.call({ boom1: "boom1" });
-someFunction.apply({ boom2: "boom2" });
+var exclaimMary = exclaimName.call({ name: "Mary" });
+console.log(exclaimMary);
+
+var exclaimIsla = exclaimName.apply({ name: "Isla" });
+console.log(exclaimIsla);
 ```
 
-### Question 9
+### Question 8
 
 Can you list the rules that govern the value of `this`?
 
