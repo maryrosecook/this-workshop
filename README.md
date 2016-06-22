@@ -47,6 +47,8 @@ We'll come back together for a short plenary to discuss our answers to the quest
 
 ## Questions
 
+Note: the code in many of these questions is not realisitic or idiomatic JavaScript.  It's just for illustrating clear examples of the behaviour of the `this` keyword.
+
 ### Question 1
 
 ```js
@@ -170,5 +172,5 @@ Can you list the rules that govern the value of `this`?
 
 ## Resources
 
-* [Understanding the this keyword in JavaScript](http://unschooled.org/2012/03/understanding-javascript-this/)
+* [Understand JavaScript's this with clarity](http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/)
 * More examples of the `this` keyword in JavaScript in the [Count project repo](https://github.com/maryrosecook/count)
