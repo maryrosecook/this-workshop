@@ -64,7 +64,8 @@ var person = new Person();
 
 ```js
 function Person() {
-  // What is the value of `this` at this point in the program? Why?
+  // What is the value of `this` at this point in the program?
+  // Maybe research the window object to find out more.
 };
 
 // In this version, the programmer has forgotten to put `new` before
