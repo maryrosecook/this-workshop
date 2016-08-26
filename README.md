@@ -98,6 +98,23 @@ Person();
 ### Question 4
 
 ```js
+function ClickCount() {
+  this.count = 0;
+
+  var self = this;
+  $(window).on("click", function() {
+    // Why is `self` used here?
+    // What would happen if `this` was used instead of `self`?
+    self.count++;
+  });
+};
+
+var clickCount = new ClickCount();
+```
+
+### Question 5
+
+```js
 function Person() {
   this.name = "Mary";
 };
@@ -119,7 +136,7 @@ var exclaimName = person.exclaimName;
 console.log(exclaimName());
 ```
 
-### Question 5
+### Question 6
 
 ```js
 function Person() {
@@ -141,14 +158,14 @@ person.exclaimName = exclaimName;
 console.log(person.exclaimName());
 ```
 
-### Question 6
+### Question 7
 
 ```js
 // What value does `this` have here?
 this;
 ```
 
-### Question 7
+### Question 8
 
 ```js
 function exclaimName() {
@@ -169,7 +186,7 @@ var exclaimIsla = exclaimName.apply({ name: "Isla" });
 console.log(exclaimIsla);
 ```
 
-### Question 8
+### Question 9
 
 Can you list the rules that govern the value of `this`?
 
